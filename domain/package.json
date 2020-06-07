@@ -1,0 +1,20 @@
+{
+  "name": "ch.resrc.domain",
+  "version": "0.0.6",
+  "author": "Remo F. Schenker",
+  "license": "MIT",
+  "scripts": {
+    "compile:js": "pbjs -t static-module -w commonjs -o index.js *.proto",
+    "compile:ts": "npm run compile:js && pbts -o index.d.ts index.js"
+  },
+  "dependencies": {
+    "protobuf-typescript": "^6.8.8",
+    "protobufjs": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "typescript": "^3.7.4"
+  },
+  "main": "dist/ch.resrc.data.web.domain.js",
+  "description": ""
+}

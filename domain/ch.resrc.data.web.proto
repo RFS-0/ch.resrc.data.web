@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package ch.resrc.data.web;
+option optimize_for = SPEED;
+
+message Host {
+    string hostname = 1;
+    int32 port = 2;
+    repeated string fetched = 3;
+    repeated string addresses = 4;
+    repeated string resolved = 5;
+}
+
+message Path {
+    string path = 1;
+    string search = 2;
+    string hash = 3;
+}
+
+message Auth {
+    string username = 1;
+    string password = 2;
+}
+
+message Protocol {
+    string protocol = 1;
+}
