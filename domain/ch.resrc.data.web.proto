@@ -7,14 +7,16 @@ option optimize_for = SPEED;
 
 message Host {
     string hostname = 1;
-    int32 port = 2;
-    repeated string fetched = 3;
-    repeated string addresses = 4;
-    repeated string resolved = 5;
+    string topLevelDomain = 2;
+    int32 port = 3;
+    repeated string fetched = 4;
+    bool fetchFailed = 5;
+    repeated string addresses = 6;
+    repeated string resolved = 7;
 }
 
 message Path {
-    string path = 1;
+    string pathname = 1;
     string search = 2;
     string hash = 3;
 }
@@ -24,6 +26,14 @@ message Auth {
     string password = 2;
 }
 
-message Protocol {
-    string protocol = 1;
+message Script {
+    string script = 1;
+}
+
+message FetchResult {
+    string fetchedHost = 1;
+    repeated string hostnames = 2;
+    repeated Path paths = 3;
+    repeated Script scripts = 6;
+    bool error = 7;
 }

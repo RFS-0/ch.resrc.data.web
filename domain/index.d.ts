@@ -17,11 +17,17 @@ export namespace ch {
                     /** Host hostname */
                     hostname?: (string|null);
 
+                    /** Host topLevelDomain */
+                    topLevelDomain?: (string|null);
+
                     /** Host port */
                     port?: (number|null);
 
                     /** Host fetched */
                     fetched?: (string[]|null);
+
+                    /** Host fetchFailed */
+                    fetchFailed?: (boolean|null);
 
                     /** Host addresses */
                     addresses?: (string[]|null);
@@ -42,11 +48,17 @@ export namespace ch {
                     /** Host hostname. */
                     public hostname: string;
 
+                    /** Host topLevelDomain. */
+                    public topLevelDomain: string;
+
                     /** Host port. */
                     public port: number;
 
                     /** Host fetched. */
                     public fetched: string[];
+
+                    /** Host fetchFailed. */
+                    public fetchFailed: boolean;
 
                     /** Host addresses. */
                     public addresses: string[];
@@ -128,8 +140,8 @@ export namespace ch {
                 /** Properties of a Path. */
                 interface IPath {
 
-                    /** Path path */
-                    path?: (string|null);
+                    /** Path pathname */
+                    pathname?: (string|null);
 
                     /** Path search */
                     search?: (string|null);
@@ -147,8 +159,8 @@ export namespace ch {
                      */
                     constructor(properties?: ch.resrc.data.web.IPath);
 
-                    /** Path path. */
-                    public path: string;
+                    /** Path pathname. */
+                    public pathname: string;
 
                     /** Path search. */
                     public search: string;
@@ -323,91 +335,205 @@ export namespace ch {
                     public toJSON(): { [k: string]: any };
                 }
 
-                /** Properties of a Protocol. */
-                interface IProtocol {
+                /** Properties of a Script. */
+                interface IScript {
 
-                    /** Protocol protocol */
-                    protocol?: (string|null);
+                    /** Script script */
+                    script?: (string|null);
                 }
 
-                /** Represents a Protocol. */
-                class Protocol implements IProtocol {
+                /** Represents a Script. */
+                class Script implements IScript {
 
                     /**
-                     * Constructs a new Protocol.
+                     * Constructs a new Script.
                      * @param [properties] Properties to set
                      */
-                    constructor(properties?: ch.resrc.data.web.IProtocol);
+                    constructor(properties?: ch.resrc.data.web.IScript);
 
-                    /** Protocol protocol. */
-                    public protocol: string;
+                    /** Script script. */
+                    public script: string;
 
                     /**
-                     * Creates a new Protocol instance using the specified properties.
+                     * Creates a new Script instance using the specified properties.
                      * @param [properties] Properties to set
-                     * @returns Protocol instance
+                     * @returns Script instance
                      */
-                    public static create(properties?: ch.resrc.data.web.IProtocol): ch.resrc.data.web.Protocol;
+                    public static create(properties?: ch.resrc.data.web.IScript): ch.resrc.data.web.Script;
 
                     /**
-                     * Encodes the specified Protocol message. Does not implicitly {@link ch.resrc.data.web.Protocol.verify|verify} messages.
-                     * @param message Protocol message or plain object to encode
+                     * Encodes the specified Script message. Does not implicitly {@link ch.resrc.data.web.Script.verify|verify} messages.
+                     * @param message Script message or plain object to encode
                      * @param [writer] Writer to encode to
                      * @returns Writer
                      */
-                    public static encode(message: ch.resrc.data.web.IProtocol, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encode(message: ch.resrc.data.web.IScript, writer?: $protobuf.Writer): $protobuf.Writer;
 
                     /**
-                     * Encodes the specified Protocol message, length delimited. Does not implicitly {@link ch.resrc.data.web.Protocol.verify|verify} messages.
-                     * @param message Protocol message or plain object to encode
+                     * Encodes the specified Script message, length delimited. Does not implicitly {@link ch.resrc.data.web.Script.verify|verify} messages.
+                     * @param message Script message or plain object to encode
                      * @param [writer] Writer to encode to
                      * @returns Writer
                      */
-                    public static encodeDelimited(message: ch.resrc.data.web.IProtocol, writer?: $protobuf.Writer): $protobuf.Writer;
+                    public static encodeDelimited(message: ch.resrc.data.web.IScript, writer?: $protobuf.Writer): $protobuf.Writer;
 
                     /**
-                     * Decodes a Protocol message from the specified reader or buffer.
+                     * Decodes a Script message from the specified reader or buffer.
                      * @param reader Reader or buffer to decode from
                      * @param [length] Message length if known beforehand
-                     * @returns Protocol
+                     * @returns Script
                      * @throws {Error} If the payload is not a reader or valid buffer
                      * @throws {$protobuf.util.ProtocolError} If required fields are missing
                      */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ch.resrc.data.web.Protocol;
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ch.resrc.data.web.Script;
 
                     /**
-                     * Decodes a Protocol message from the specified reader or buffer, length delimited.
+                     * Decodes a Script message from the specified reader or buffer, length delimited.
                      * @param reader Reader or buffer to decode from
-                     * @returns Protocol
+                     * @returns Script
                      * @throws {Error} If the payload is not a reader or valid buffer
                      * @throws {$protobuf.util.ProtocolError} If required fields are missing
                      */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ch.resrc.data.web.Protocol;
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ch.resrc.data.web.Script;
 
                     /**
-                     * Verifies a Protocol message.
+                     * Verifies a Script message.
                      * @param message Plain object to verify
                      * @returns `null` if valid, otherwise the reason why it is not
                      */
                     public static verify(message: { [k: string]: any }): (string|null);
 
                     /**
-                     * Creates a Protocol message from a plain object. Also converts values to their respective internal types.
+                     * Creates a Script message from a plain object. Also converts values to their respective internal types.
                      * @param object Plain object
-                     * @returns Protocol
+                     * @returns Script
                      */
-                    public static fromObject(object: { [k: string]: any }): ch.resrc.data.web.Protocol;
+                    public static fromObject(object: { [k: string]: any }): ch.resrc.data.web.Script;
 
                     /**
-                     * Creates a plain object from a Protocol message. Also converts values to other types if specified.
-                     * @param message Protocol
+                     * Creates a plain object from a Script message. Also converts values to other types if specified.
+                     * @param message Script
                      * @param [options] Conversion options
                      * @returns Plain object
                      */
-                    public static toObject(message: ch.resrc.data.web.Protocol, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                    public static toObject(message: ch.resrc.data.web.Script, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
                     /**
-                     * Converts this Protocol to JSON.
+                     * Converts this Script to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a FetchResult. */
+                interface IFetchResult {
+
+                    /** FetchResult fetchedHost */
+                    fetchedHost?: (string|null);
+
+                    /** FetchResult hostnames */
+                    hostnames?: (string[]|null);
+
+                    /** FetchResult paths */
+                    paths?: (ch.resrc.data.web.IPath[]|null);
+
+                    /** FetchResult scripts */
+                    scripts?: (ch.resrc.data.web.IScript[]|null);
+
+                    /** FetchResult error */
+                    error?: (boolean|null);
+                }
+
+                /** Represents a FetchResult. */
+                class FetchResult implements IFetchResult {
+
+                    /**
+                     * Constructs a new FetchResult.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: ch.resrc.data.web.IFetchResult);
+
+                    /** FetchResult fetchedHost. */
+                    public fetchedHost: string;
+
+                    /** FetchResult hostnames. */
+                    public hostnames: string[];
+
+                    /** FetchResult paths. */
+                    public paths: ch.resrc.data.web.IPath[];
+
+                    /** FetchResult scripts. */
+                    public scripts: ch.resrc.data.web.IScript[];
+
+                    /** FetchResult error. */
+                    public error: boolean;
+
+                    /**
+                     * Creates a new FetchResult instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns FetchResult instance
+                     */
+                    public static create(properties?: ch.resrc.data.web.IFetchResult): ch.resrc.data.web.FetchResult;
+
+                    /**
+                     * Encodes the specified FetchResult message. Does not implicitly {@link ch.resrc.data.web.FetchResult.verify|verify} messages.
+                     * @param message FetchResult message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: ch.resrc.data.web.IFetchResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified FetchResult message, length delimited. Does not implicitly {@link ch.resrc.data.web.FetchResult.verify|verify} messages.
+                     * @param message FetchResult message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: ch.resrc.data.web.IFetchResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a FetchResult message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns FetchResult
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ch.resrc.data.web.FetchResult;
+
+                    /**
+                     * Decodes a FetchResult message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns FetchResult
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ch.resrc.data.web.FetchResult;
+
+                    /**
+                     * Verifies a FetchResult message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a FetchResult message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns FetchResult
+                     */
+                    public static fromObject(object: { [k: string]: any }): ch.resrc.data.web.FetchResult;
+
+                    /**
+                     * Creates a plain object from a FetchResult message. Also converts values to other types if specified.
+                     * @param message FetchResult
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: ch.resrc.data.web.FetchResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this FetchResult to JSON.
                      * @returns JSON object
                      */
                     public toJSON(): { [k: string]: any };
